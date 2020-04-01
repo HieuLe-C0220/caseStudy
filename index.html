@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>Giải trí và nghe nhạc</title>
 </head>
-<body>
+<body onload="loadGame()">
 <canvas id="myGame" width="790px" height="600px" style="border: 4px solid sienna;left: 200px;position: absolute;
 background-color: aliceblue"></canvas>
+<script>
+    let canvas = document.getElementById('myGame');
+    let context = canvas.getContext('2d');
+</script>
 <script src="BallandMove.js"></script>
-<script src="KhoiChuNhat.js"></script>
+<script src="gach.js"></script>
 <script src="ThanhDoBall.js"></script>
+<script src="runGame.js"></script>
 </body>
 </html>
