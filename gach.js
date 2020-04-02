@@ -1,20 +1,20 @@
-let HCN = function(x,y,weight,height) {
+let Gach = function(x,y,weight,height) {
     this.x = x;
     this.y = y;
-    this.weight = weight;
+    this.width = weight;
     this.height = height;
-    this.between = 20;
+    this.between = 30;
     this.toadoX = 0;//đặt riêng 1 toạ độ X,Y mới để vẽ các khối gạch
     this.toadoY = 0;
     this.draw = function (context,x,y) {
         context.beginPath();
-        context.rect(x, y, this.weight, this.height);
+        context.rect(x, y, this.width, this.height);
         context.fillStyle = 'green';
         context.fill();
         context.closePath();
     };
     this.setX = function (a) {
-        this.toadoX = this.x + a*(this.weight + this.between);
+        this.toadoX = this.x + a*(this.width + this.between);
     };
     this.getX = function () {
         return this.toadoX;
@@ -24,7 +24,7 @@ let HCN = function(x,y,weight,height) {
     };
     this.getY = function () {
         return this.toadoY;
-    }
+    };
 };
 
 
