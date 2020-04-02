@@ -4,6 +4,8 @@ let HCN = function(x,y,weight,height) {
     this.weight = weight;
     this.height = height;
     this.between = 20;
+    this.toadoX = 0;//đặt riêng 1 toạ độ X,Y mới để vẽ các khối gạch
+    this.toadoY = 0;
     this.draw = function (context,x,y) {
         context.beginPath();
         context.rect(x, y, this.weight, this.height);
@@ -12,16 +14,16 @@ let HCN = function(x,y,weight,height) {
         context.closePath();
     };
     this.setX = function (a) {
-        this.x = this.x + a*(this.weight + this.between);
+        this.toadoX = this.x + a*(this.weight + this.between);
     };
     this.getX = function () {
-        return this.x;
+        return this.toadoX;
     };
     this.setY = function (a) {
-        this.y = this.y + a*(this.height + this.between);
+        this.toadoY = this.y + a*(this.height + this.between);
     };
     this.getY = function () {
-        return this.y;
+        return this.toadoY;
     }
 };
 
