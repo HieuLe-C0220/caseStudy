@@ -10,8 +10,6 @@ let ThanhDoBall = function () {
     this.x = canvas.width/3-this.w/2;
     this.y = canvas.height - this.h - thamsoThanh.marginTop;
     this.speed = thamsoThanh.speed;
-    this.isLeft = false;
-    this.isRight = false;
     this.drawThanh = function() { //vẽ thanh đỡ
         context.beginPath();
         context.rect(this.x, this.y, this.w, this.h);
@@ -32,8 +30,8 @@ let ThanhDoBall = function () {
         }
     };
     this.doBall = function (ball) {
-        if (ball.x + ball.radius > this.x && ball.x + ball.radius < this.x + this.w
-            && ball.y + ball.radius > this.y && ball.y - ball.radius < this.y + this.h) {
+        if (ball.x + ball.radius >= this.x && ball.x + ball.radius <= this.x + this.w
+            && ball.y + ball.radius >= this.y && ball.y - ball.radius <= this.y + this.h) {
             ball.dy = -ball.dy;
         }
     }
